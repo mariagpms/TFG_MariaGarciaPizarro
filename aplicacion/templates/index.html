@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFG María García Pizarro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="contenedor-cabecera">
+            <img src="{{ url_for('static', filename='images/escudo_uva.png') }}" alt="Escudo UVA" class="escudo_uva">
+            <img src="{{ url_for('static', filename='images/logo_eii.png') }}" alt="Logo EII" class="logo-eii">
+            <h1 class="titulo-cabecera">Clasificador de poblaciones celulares</h1>
+        </div>
+    </header>
+
+    <main class="contenedor-principal">
+        <div class="contenido-principal">
+            <div class="seccion-subida">
+                <div id="area-arrastre">
+                    <p>Arrastra un archivo CSV aquí o</p>
+                    <input type="file" id="entradaArchivo" accept=".csv" hidden>
+                    <button id="botonSeleccionarArchivo">Selecciona archivo</button>
+                    <p id="nombre-archivo"></p>
+                </div>
+                <div class="contenedor-checkbox">
+                    <label class="etiqueta-checkbox">
+                        <input type="checkbox" id="checkboxAnotado">
+                        <span class="texto-checkbox">Anotado</span>
+                    </label>
+                </div>
+                <div class="contenedor-boton-clasificar">
+                    <button id="botonClasificar" class="boton-clasificar" disabled>Clasificar</button>
+                </div>
+            </div>
+            <div class="seccion-resultado">
+                <div id="resultado">
+                    <p>Los resultados de la clasificación aparecerán aquí...</p>
+                </div>
+                <div id="descarga-area" style="display: none;">
+                    <button id="boton-descarga" class="boton-descarga">Descargar archivo clasificado</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>Trabajo Fin de Grado, María García Pizarro - Curso 2024/2025</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/principal.js') }}"></script>
+</body>
+</html>

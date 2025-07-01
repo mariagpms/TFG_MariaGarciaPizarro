@@ -1,0 +1,6 @@
+flask==2.0.1
+werkzeug==2.0.3
+numpy==2.2.6
+pandas==2.3.0
+torch==2.7.1
+scikit-learn==1.7.0
